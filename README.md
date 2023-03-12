@@ -1,0 +1,1 @@
+python3 python-chatgpt.py "Write todays date"

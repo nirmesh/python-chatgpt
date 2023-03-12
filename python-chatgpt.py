@@ -1,13 +1,19 @@
 import requests
+import argparse
+parser= argparse.ArgumentParser()
+parser.add_argument("prompt",help="prompt to send your question to open Ai")
+args = parser.parse_args()
+
+
 api_endpoint="https://api.openai.com/v1/completions"
-api_secret="xxx"
+api_secret="XXXX"
 request_headers={
     'Content-Type': 'application/json',
     'Authorization': 'Bearer '+api_secret
 }
 request_data ={
     "model":"text-davinci-003",
-    "prompt":"Write python script to get today's date. Write only code,no text",
+    "prompt":f"Write python script to {args.prompt} Write only code,no text",
     "max_tokens":100,
     "temperature":0.5
 
